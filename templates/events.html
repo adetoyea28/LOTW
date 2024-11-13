@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale-1.0">
+        <style>
+            #body{
+                position: absolute;
+                background: linear-gradient(to bottom right, #866504, #007685);
+                width: 98.5%;
+                height: 200%;
+            }
+            #top{
+                position: relative;
+                background-color: #cccccc;
+                opacity: 0.9;
+                border-radius: 15px;
+                height: 42.5%;
+                top: 2.5%;
+                left: 5%;
+                width: 90%;
+            }
+            #bottom{
+                position: absolute;
+                border-radius: 15px;
+                background-color: #111111;
+                opacity: 0.9;
+                height: 85%;
+                top: 100%;
+                left: 5%;
+                width: 90%;
+            }
+            #nav_b{
+                position: absolute;
+                width: 98%;
+                top: 10px;
+                left: 10px;
+                height: 10%;
+                border-radius: 10px;
+                background-color: white;
+            }
+            .link{
+                display: inline-block;
+                text-decoration: none;
+                color: black;
+                text-align: center;
+                padding-top: 12px;
+                font-weight: bolder;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            #right{
+                position: absolute;
+                display: inline-block;
+                color: white;
+                background-color: black;
+                line-height: 15px;
+                height: 30px;
+                margin-top: 3.5px;
+                border-radius: 7px;
+                margin-left: 54.5%;
+            }
+            #fft-section{
+                position: absolute;
+                height: 75%;
+                width: 80%;
+                overflow-y: scroll;
+                background-color: white;
+                left: 10%;
+                border-radius: 10px;
+                top: 17%;
+            }
+            #fft{
+                position: absolute;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-decoration: underline;
+                top: 15%;
+                left: 14%;
+            }
+            #ht{
+                position: absolute;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+                top: 25%;
+                left: 20%;
+            }
+            #pt-section{
+                position: absolute;
+                height: 75%;
+                width: 80%;
+                overflow-y: scroll;
+                background-color: black;
+                left: 10%;
+                border-radius: 10px;
+                top: 10%;
+            }
+            #pt{
+                color: white;
+                position: absolute;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-decoration: underline;
+                top: 1%;
+                left: 14%;
+            }
+            #ptc{
+                color: white;
+                position: absolute;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+                top: 15%;
+                left: 20%;
+            }
+            @media (max-width:400px){
+            #body{
+            width:96%;
+            }
+            #right{
+            display:none;
+            }
+            #nav_b{
+            width:96%;
+            left:6px;
+            top:5px;
+            }
+            .link{
+            padding-top:20px;
+            padding-left:9%;
+            }
+            #fft-section{
+            top:12%;
+            width:96%;
+            left:6px;
+            height:87%
+            }
+            #fft{
+            top:60px;
+            text-align:center;
+            }
+            #ht{
+            top:100px;
+            }
+            #pt-section{
+            top:2%;
+            width:96%;
+            left:6px;
+            height:95%
+            }
+            #pt{
+            top:8px;
+            text-align:center;
+            }
+            #ptc{
+            top:45px;
+            }
+            body{
+            background:black;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div id="body">
+            <div id="top">
+                <div id="nav_b">
+                    <a class="link" href="http://localhost:5000">Home</a>
+                    <a class="link" href="http://localhost:5000/Community">Community</a>
+                    <a class="link" href="http://localhost:5000/Events">Events</a>
+                    <a class="link" id="right" href="#bottom">Past Events</a>
+                </div>
+                <div id="fft-section"></div>
+                    <h2 id="fft">UpComing Events</h2>
+                    <p id="ht">{{ n_events|safe }}</p>
+                </div>
+            </div>
+            <div id="bottom">
+                <div id="pt-section">
+                    <h2 id="pt">Past Events</h2>
+                    <p id="ptc">{{ p_events|safe }}</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #body{
+                position: absolute;
+                background: linear-gradient(to bottom right, #866504, #007685);
+                width: 98.5%;
+                height: 100%;
+            }
+            #top{
+                position: relative;
+                background-color: #cccccc;
+                opacity: 0.9;
+                border-radius: 15px;
+                height: 85%;
+                top: 7.5%;
+                left: 5%;
+                width: 90%;
+            }
+            textarea{
+                color: black;
+                background-color: white;
+                height: 300px;
+                text-align: center;
+                width: 300px;
+                border-radius: 5px;
+                border-style: solid;
+                margin-left: 4.4%;
+                margin-top: 7%;
+            }
+            input{
+                position: absolute;
+                display: block;
+                text-align: center;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: white;
+                color: black;
+                width: 80px;
+                border-radius: 5px;
+                border-style: solid;
+                top: 80%;
+                left: 46%;
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="body">
+            <div id="top">
+                <form action="http://localhost:5000/update_events" method="POST">
+                    <textarea class="update" name="n_e" placeholder="Enter New Events Update"></textarea>
+                    <textarea class="update" name="p_e" placeholder="Enter Past Events Update"></textarea>
+                    <textarea class="update" name="h_t" placeholder="Enter Hot Topic Update"></textarea>
+                    <input type="submit" value="Update">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

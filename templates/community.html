@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale-1.0">
+        <style>
+            #body{
+                position: absolute;
+                background: linear-gradient(to bottom right, #866504, #007685);
+                width: 98.5%;
+                height: 200%;
+            }
+            #top{
+                position: relative;
+                background-color: #cccccc;
+                opacity: 0.9;
+                border-radius: 15px;
+                height: 42.5%;
+                top: 2.5%;
+                left: 5%;
+                width: 90%;
+            }
+            #bottom{
+                position: relative;
+                border-radius: 15px;
+                background-color: #111111;
+                opacity: 0.9;
+                height: 42.5%;
+                top: 5%;
+                left: 5%;
+                width: 90%;
+            }
+            #nav_b{
+                position: absolute;
+                width: 98%;
+                top: 10px;
+                left: 10px;
+                height: 10%;
+                border-radius: 10px;
+                background-color: white;
+            }
+            .link{
+                display: inline-block;
+                text-decoration: none;
+                color: black;
+                text-align: center;
+                padding-top: 12px;
+                font-weight: bolder;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            #right{
+                position: absolute;
+                display: inline-block;
+                color: white;
+                background-color: black;
+                line-height: 15px;
+                height: 30px;
+                margin-top: 3.5px;
+                border-radius: 7px;
+                margin-left: 55.8%;
+            }
+            #fft-section{
+                position: absolute;
+                height: 75%;
+                width: 80%;
+                overflow-y: scroll;
+                background-color: white;
+                left: 10%;
+                border-radius: 10px;
+                top: 17%;
+            }
+            #fft{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-decoration: underline;
+                margin-top: 0.5%;
+                margin-left: 2%;
+            }
+            #ht{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+            }
+            #comment_section{
+                position: absolute;
+                height: 75%;
+                width: 50%;
+                overflow-y: scroll;
+                background-color: black;
+                left: 40%;
+                border-radius: 10px;
+                top: 10%;
+            }
+            .cmmnts{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: black;
+                text-align: center;
+                margin-top: 25px;
+                margin-left: 15%;
+                width: 70%;
+                background-color: white;
+                border-radius: 10px;
+                padding: 5px;
+            }
+            #cmt_cnt{
+                position: absolute;
+                display: block;
+                color: white;
+                background-color: black;
+                height: 50%;
+                width: 25%;
+                border-radius: 10px;
+                border-style: solid;
+                border-color: black;
+                text-align: center;
+                top: 15%;
+                left: 5%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            #btn_sub{
+                position: absolute;
+                display: block;
+                text-align: center;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: white;
+                color: black;
+                width: 80px;
+                border-radius: 5px;
+                border-style: solid;
+                top: 70%;
+                left: 14%;
+                height: 30px;
+            }
+            @media (max-width:400px){
+            #body{
+            width:96%;
+            }
+            #right{
+            display:none;
+            }
+            #nav_b{
+            width:96%;
+            left:6px;
+            top:5px;
+            }
+            .link{8
+            padding-top:30px;
+            padding-left:9%;
+            }
+            #fft-section{
+            top:12%;
+            width:96%;
+            left:6px;
+            height:87%
+            }
+            #fft{
+            text-align:center;
+            }
+            #comment_section{
+            left:5%;
+            height:60%;
+            top:5%;
+            width:90%;
+            }
+            #cmt_cnt{
+            width:88%;
+            left:5%;
+            height:17.5%;
+            top:67.5%;
+            }
+            #btn_sub{
+            top:88%;
+            width:85%;
+            left:7.5%;
+            }
+        }
+        </style>
+        <script></script>
+    </head>
+    <body>
+        <div id="body">
+            <div id="top">
+                <div id="nav_b">
+                    <a class="link" href="http://localhost:5000">Home</a>
+                    <a class="link" href="http://localhost:5000/Community">Community</a>
+                    <a class="link" href="http://localhost:5000/Events">Events</a>
+                    <a class="link" id="right" href="#bottom">comment</a>
+                </div>
+                <div id="fft-section">
+                    <h2 id="fft">Hot Topic</h2>
+                    <p id="ht">{{ topic }}</p>
+                </div>
+            </div>
+            <div id="bottom">
+                <div id="comment_section">
+                    {{ comments|safe }}
+                </div>
+                <form name="cmmt_form" action="http://127.0.0.1:5000/postcomment" method="POST">
+                    <textarea id="cmt_cnt" name="cmt_cnt" placeholder="Type in your comments"></textarea>
+                    <input type="submit" id="btn_sub" value="Post">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

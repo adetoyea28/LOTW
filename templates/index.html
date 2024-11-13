@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale-1.0">
+        <title>LOTW</title>
+        <style>
+            #body{
+                position: absolute;
+                background: linear-gradient(to bottom right, #866504, #007685);
+                width: 98.5%;
+                height: 200%;
+            }
+            #top{
+                position: relative;
+                background-color: #cccccc;
+                opacity: 0.9;
+                border-radius: 15px;
+                height: 42.5%;
+                top: 2.5%;
+                left: 5%;
+                width: 90%;
+            }
+            #bottom{
+                position: relative;
+                border-radius: 15px;
+                background-color: #111111;
+                opacity: 0.9;
+                height: 42.5%;
+                top: 5%;
+                left: 5%;
+                width: 90%;
+            }
+            #nav_b{
+                position: absolute;
+                width: 98%;
+                top: 10px;
+                left: 10px;
+                height: 10%;
+                border-radius: 10px;
+                background-color: white;
+            }
+            .link{
+                display: inline-block;
+                text-decoration: none;
+                color: black;
+                text-align: center;
+                padding-top: 12px;
+                font-weight: bolder;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            img{
+                display: inline-block;
+                margin-top: 15%;
+                margin-left: 7.5%;
+            }
+            #intro{
+                position: absolute;
+                font-family: monospace;
+                display: inline-block;
+                margin-top: 16%;
+            }
+            #name{
+                position: absolute;
+                display: inline-block;
+                margin-top: 19%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            #cmt{
+                color: white;
+                background-color: black;
+                width: 200px;
+                padding: 10px;
+                margin-left: 70%;
+            }
+            #right{
+                position: absolute;
+                display: inline-block;
+                color: white;
+                background-color: black;
+                line-height: 20px;
+                height: 30px;
+                margin-top: 3.5px;
+                border-radius: 7px;
+                margin-left: 58%;
+            }
+            #abt{
+                color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-decoration: underline;
+                text-align: center;
+                padding-top: 20px;
+            }
+            #miss{
+                position: absolute;
+                color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-decoration: underline;
+                top: 70px;
+                left: 200px;
+            }
+            #found{
+                position: absolute;
+                color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-decoration: underline;
+                top: 70px;
+                left: 750px;
+            }
+            #found_cntnt{
+                position: absolute;
+                color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                top: 105px;
+                text-align: center;
+                left: 700px;
+            }
+            #miss_cntnt{
+                position: absolute;
+                color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                top: 105px;
+                text-align: center;
+                left: 100px;
+            }
+            #cmt2{
+                color: black;
+                background-color: white;
+                width: 270px;
+                padding: 10px;
+                margin-top: 200px;
+                margin-left: 50%;
+            }
+            @media (max-width:400px){
+            #body{
+            	width:96%;
+            }
+            #right{
+            	display:none;
+            }
+            #nav_b{
+            	width:96%;
+            	left:6px;
+            	top:5px;
+            }
+            .link{
+            	padding-top:20px;
+            	padding-left:9%;
+            }
+            img{
+            	margin-top:30%;
+            	margin-left:25%;
+            }
+            #intro{
+            	position:absolute;
+            	display:block;
+            	margin-top:5%;
+            	font-size:15px;
+            	margin-left:5%;
+            	text-align:center;
+            }
+            #name{
+            	position:absolute;
+            	display:block;
+            	font-size:20px;
+            	text-align:center;
+            	margin-top:13%;
+            }
+            #cmt{
+            	margin-left:12%;
+            	width:220px;
+            	margin-top:50%;
+            }
+            #miss{
+            	text-align:center;
+            	position:absolute;
+            	display:block;
+            	left:30%;
+            }
+            #miss_cntnt{
+            	position:absolute;
+            	display:block;
+            	top:18.5%;
+            	font-size:14px;
+            	left:5%;
+            }
+            #found{
+            	text-align:center;
+            	position:absolute;
+            	display:block;
+            	left:22.5%;
+            	top:40%;
+            }
+            #found_cntnt{
+            	position:absolute;
+            	display:block;
+            	font-size:14px;
+            	top:46%;
+            	left:9%;
+            }
+            #cmt2{
+            	margin-left:6%;
+            	margin-top:105%;
+            	font-size:12px;
+            	width:250px;
+            }
+            body{
+            	background-color:black;
+            }
+        }
+        </style>
+        <script></script>
+    </head>
+    <body>
+        <div id="body">
+            <div id="top">
+                <div id="nav_b">
+                    <a class="link" href="http://localhost:5000">Home</a>
+                    <a class="link" href="http://localhost:5000/Community">Community</a>
+                    <a class="link" href="http://localhost:5000/Events">Events</a>
+                    <a class="link" id="right" href="#bottom">About</a>
+                </div>
+                <img src="http://localhost:5000/logo" width="150" height="150">
+                <h1 id="intro">Welcome to the official page of</h1>
+                <h1 id="name">LIGHT OF THE WORLD EVANGELICAL MINISTRY</h1>
+                <p id="cmt"><b>Isaiah 60 vs 1</b><br>
+                    <i>Arise and shine for the Light<br> 
+                    has come and the glory<br> of the lord has risen 
+                    upon <br>you</i></p>
+            </div>
+            <div id="bottom">
+                <h1 id="abt"><i>ABOUT</i></h1>
+                <h2 id="miss"><i>Our Mission</i></h2>
+                <p id="miss_cntnt">Our Mission is to preach good tidings<br>
+                unto the meek. To proclam liberty to the<br> captive, to comfort
+                all that mourn, to bind<br> up the brokenhearted. To spread the
+                 the joy<br> and happiness that comes from the guidance<br> of the Light
+                of the world, Jesus Christ.</p>
+                <h2 id="found"><i>Founder and G.O</i></h2>
+                <p id="found_cntnt">The Founder and General Overseer of<br>
+                Light of the world Evangelical Ministry<br> is Jesus Christ
+                for he alone is the Light of<br> the world</p>
+                <p id="cmt2"><b>Luke 7 vs 22:<br></b><i>Then Jesus answering said unto<br>
+                them, "Go your way, and tell John what<br>
+                things ye have seen and heard; how that<br>
+                the blind see, the lame walk, the lepers<br>
+                are cleansed, the deaf hear, the dead are<br>
+                raised, to the poor the gospel is preached".</i></p>
+            </div>
+        </div>
+    </body>
+</html>
