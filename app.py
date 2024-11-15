@@ -65,16 +65,18 @@ def updateE():
 @app.route('/update_topic', methods = ['POST', 'GET'])
 def updateH():
     if request.method == 'POST':
-        ht_tpc = request.form('h_t')
+        ht_tpc = request.form['h_t']
         with open('./templates/dynamic_content/hot_topic.txt', mode='w', encoding='utf-8') as cs:
             cs.write(ht_tpc)
+        return redirect(url_for('community'))
             
 @app.route('/update_comments', methods = ['POST', 'GET'])
 def updateC():
     if request.method == 'POST':
-        cm_cs = request.form('c_s')
+        cm_cs = request.form['c_s']
         with open('./templates/dynamic_content/comments.txt', mode='w', encoding='utf-8') as cs:
             cs.write(cm_cs)
+        return redirect(url_for('community'))
 
 if __name__ == '__main__':
     app.run(debug=True, port=4000)
