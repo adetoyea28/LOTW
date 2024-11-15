@@ -54,6 +54,7 @@ def updateE():
         new_evnt = request.form['n_e']
         pst_evnt = request.form['p_e']
         ht_tpc = request.form['h_t']
+        cm_cs = request.form['c_s']
         with open('./templates/dynamic_content/new_event.txt', mode='w', encoding='utf-8') as ne:
             ne.write(new_evnt)
 
@@ -62,6 +63,9 @@ def updateE():
 
         with open('./templates/dynamic_content/hot_topic.txt', mode='w', encoding='utf-8') as ht:
             ht.write(ht_tpc)
+
+        with open('./templates/dynamic_content/comments.txt', mode='w', encoding='utf-8') as cs:
+            cs.write(cm_cs)
 
     return redirect(url_for('index'))
 
