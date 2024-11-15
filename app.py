@@ -53,22 +53,28 @@ def updateE():
     if request.method == 'POST':
         new_evnt = request.form['n_e']
         pst_evnt = request.form['p_e']
-        ht_tpc = request.form['h_t']
-        cm_cs = request.form['c_s']
+        
         with open('./templates/dynamic_content/new_event.txt', mode='w', encoding='utf-8') as ne:
             ne.write(new_evnt)
 
         with open('./templates/dynamic_content/past_event.txt', mode='w', encoding='utf-8') as pe:
             pe.write(pst_evnt)
 
-        with open('./templates/dynamic_content/hot_topic.txt', mode='w', encoding='utf-8') as ht:
-            ht.write(ht_tpc)
-
+    return redirect(url_for('index'))
+    
+@app.route('/update_topic', methods = ['POST', 'GET'])
+def updateH():
+    if request.method == 'POST':
+        ht_tpc = request.form('h_t')
+        with open('./templates/dynamic_content/hot_topic.txt', mode='w', encoding='utf-8') as cs:
+            cs.write(ht_tpc)
+            
+@app.route('/update_comments', methods = ['POST', 'GET'])
+def updateC():
+    if request.method == 'POST':
+        cm_cs = request.form('c_s')
         with open('./templates/dynamic_content/comments.txt', mode='w', encoding='utf-8') as cs:
             cs.write(cm_cs)
-
-    return redirect(url_for('index'))
-
 
 if __name__ == '__main__':
     app.run(debug=True, port=4000)
